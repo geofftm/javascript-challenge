@@ -7,41 +7,8 @@ console.log(tableData)
 
 var tbody = d3.select("tbody");
 
-// Step 1: Loop Through `data` and console.log each weather report object
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-// });
 
-// Step 2:  Use d3 to append one table row `tr` for each weather report object
-
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   var row = tbody.append("tr");
-// });
-
-// Step 3:  Use `Object.entries` to console.log each weather report value
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   var row = tbody.append("tr");
-
-//   Object.entries(ufoReport).forEach(function([key, value]) {
-//     console.log(key, value);
-//   });
-// });
-
-// Step 5: Use d3 to update each cell's text with
-// weather report values (weekday, date, high, low)
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   var row = tbody.append("tr");
-//   Object.entries(ufoReport).forEach(function([key, value]) {
-//     console.log(key, value);
-//     // Append a cell to the row for each value
-//     // in the weather report object
-//     var cell = row.append("td");
-//     cell.text(value);
-//   });
-// });
+// Use d3 to update each cell's text
 
 data.forEach((ufoReport) => {
     var row = tbody.append("tr");
@@ -51,10 +18,10 @@ data.forEach((ufoReport) => {
     });
   });
 
-// Getting a reference to the button on the page with the id property set to `click-me`
+// Getting a reference to the button on the page with the id property set to `filter-btn`
 var button = d3.select("#filter-btn");
 
-// Getting a reference to the input element on the page with the id property set to 'input-field'
+// Getting a reference to the input element on the page with the id property set to 'form-control'
 var inputField = d3.select("#form-control");
 
 button.on("click", runEnter);

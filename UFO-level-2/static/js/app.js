@@ -7,18 +7,7 @@ console.log(tableData)
 
 var tbody = d3.select("tbody");
 
-//Use d3 to update each cell's text with
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   var row = tbody.append("tr");
-//   Object.entries(ufoReport).forEach(function([key, value]) {
-//     console.log(key, value);
-//     // Append a cell to the row for each value
-//     // in the weather report object
-//     var cell = row.append("td");
-//     cell.text(value);
-//   });
-// });
+//Use d3 to update each cell's text
 
 data.forEach((ufoReport) => {
     var row = tbody.append("tr");
@@ -46,19 +35,17 @@ function runEnter() {
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-  // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#input");
+  // Get the value property of the input element from each filter value
+  var date = d3.select("#date").property("value");
+  var city = d3.select("#city").property("value").toLowerCase();
+  var state = d3.select("#state").property("value").toLowerCase();
+  var country = d3.select("#country").property("value").toLowerCase();
+  var shape = d3.select("#shape").property("value").toLowerCase();
 
-  // Get the value property of the input element
-  var inputValue = inputElement.property("value").toLowerCase();
-
-  // Print the value to the console
-  console.log(inputValue);
- 
-  // Filter the data to equal the input value (by date)
+ // Filter the data to equal the input value
    
-  var filteredData = tableData.filter(report => report.datetime === inputValue || report.city === inputValue || report.state === inputValue ||
-    report.country === inputValue || report.shape === inputValue || report.durationMinutes === inputValue);
+  var filteredData = tableData.filter(report => report.datetime === date || report.city === city || report.state === state ||
+    report.country === country || report.shape === shape);
 
   console.log(filteredData);
 
