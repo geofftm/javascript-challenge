@@ -70,10 +70,10 @@ function runEnter() {
   d3.event.preventDefault();
 
   // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime");
+  var inputElement = d3.select("#input");
 
   // Get the value property of the input element
-  var inputValue = inputElement.property("value");
+  var inputValue = inputElement.property("value").toLowerCase();
 
   // Print the value to the console
   console.log(inputValue);
