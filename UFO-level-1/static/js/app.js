@@ -63,7 +63,7 @@ button.on("click", runEnter);
 // Create the function to run when the button is clicked
 function runEnter() {
 
-] //remove any children from the table body 
+ //remove any children from the table body 
   tbody.html("")
 
   // Prevent the page from refreshing
