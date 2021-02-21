@@ -63,6 +63,9 @@ button.on("click", runEnter);
 // Create the function to run when the button is clicked
 function runEnter() {
 
+] //remove any children from the table body 
+  tbody.html("")
+
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -74,11 +77,21 @@ function runEnter() {
 
   // Print the value to the console
   console.log(inputValue);
-
+ 
+  // Filter the data to equal the input value (by date)
   var filteredData = tableData.filter(report => report.datetime === inputValue);
 
   console.log(filteredData);
 
+  filteredData.forEach(function(input) {
+      console.log(input)
+      var row = tbody.append("tr");
+      Object.entries(input).forEach(function([key, value]) {
+        console.log(key, value);
+        var cell = row.append("td");
+        cell.text(value);
+      });
+    });
 
+};
 
-}
