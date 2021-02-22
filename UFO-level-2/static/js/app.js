@@ -49,6 +49,27 @@ function runEnter() {
 
   console.log(filteredData);
 
+  // if (date) {
+  //   filteredData = tableData.filter(report => report.datetime === date)
+  // }
+
+  // if (city) {
+  //   filteredData = tableData.filter(report => report.city === city)
+  // }
+
+  // if (state) {
+  //   filteredData = tableData.filter(report => report.state === state)
+  // }
+
+  // if (country) {
+  //   filteredData = tableData.filter(report => report.country === country)
+  // }
+
+  // if (shape) {
+  //   filteredData = tableData.filter(report => report.shape === shape)
+  // }
+
+
   filteredData.forEach(function(input) {
       console.log(input)
       var row = tbody.append("tr");
